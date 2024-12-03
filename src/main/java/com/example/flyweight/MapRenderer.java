@@ -12,10 +12,12 @@ public class MapRenderer {
         for (int y = 0; y < map.length; y++) {
             for (int x = 0; x < map[y].length; x++) {
                 Tile tile = map[y][x];
-                Image tileGraphic = TileGraphicFactory.getTileGraphic(tile.getType());
+                String tileTypeName = tile.getType().getName();
+                Image tileGraphic = TileGraphicFactory.getTileGraphic(tileTypeName);
                 gc.drawImage(tileGraphic, x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
             }
         }
     }
 }
+
 
